@@ -9,3 +9,4 @@
 7. manage state by reducer hook
 8. add bootstrap UI framework
 9. create product and rating component
+10. create product details screen
