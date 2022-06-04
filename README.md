@@ -6,3 +6,4 @@
 4. add routing
 5. create node JS server
 6. fetch products from backend
+7. manage state by reducer hook
