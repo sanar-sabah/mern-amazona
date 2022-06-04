@@ -5,3 +5,4 @@
 3. list featured products
 4. add routing
 5. create node JS server
+6. fetch products from backend
