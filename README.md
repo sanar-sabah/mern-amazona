@@ -11,3 +11,4 @@
 9. create product and rating component
 10. create product details screen
 11. create message and loading component
+12. implement add to cart button
