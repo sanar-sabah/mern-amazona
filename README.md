@@ -16,3 +16,4 @@
 14. create cart screen
 15. complete cart screen
 16. create sign in screen
+17. connect to mongo DB database
