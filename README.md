@@ -18,3 +18,4 @@
 16. create sign in screen
 17. connect to mongo DB database
 18. seed sample data
+19. seed sample users
