@@ -25,3 +25,4 @@
 23. create sign up screen
 24. implement selecrt payment method screen
 25. create place order screen
+26. implement place order action
