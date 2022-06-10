@@ -28,3 +28,5 @@
 26. implement place order action
 27. create order screen
 28. pay order by paypal
+29. create profile screen
+30. add sidebar and search box

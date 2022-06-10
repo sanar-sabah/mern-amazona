@@ -1,0 +1,21 @@
+{
+  "name": "amazona",
+  "version": "1.0.0",
+  "description": "1. create react app\r 2. create git repo\r 3. list featured products\r 4. add routing\r 5. create node JS server\r 6. fetch products from backend\r 7. manage state by reducer hook\r 8. add bootstrap UI framework\r 9. create product and rating component\r 10. create product details screen\r 11. create message and loading component\r 12. implement add to cart button\r 13. complete add to cart\r 14. create cart screen\r 15. complete cart screen\r 16. create sign in screen\r 17. connect to mongo DB database\r 18. seed sample data\r 19. seed sample users\r 20. create signin api\r 21. complete sign in screen\r 22. create shipping screen\r 23. create sign up screen\r 24. implement selecrt payment method screen\r 25. create place order screen\r 26. implement place order action\r 27. create order screen\r 28. pay order by paypal\r 29. create profile screen\r 30. publish to heroku",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanar-sabah/mern-amazona.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanar-sabah/mern-amazona/issues"
+  },
+  "homepage": "https://github.com/sanar-sabah/mern-amazona#readme"
+}
