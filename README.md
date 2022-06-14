@@ -30,5 +30,9 @@
 28. pay order by paypal
 29. create profile screen
 30. add sidebar and search box
+<<<<<<< HEAD
 31. create search screen
 32. create admin menu
+=======
+31. create search screen and admin view
+>>>>>>> 8e89922ef743c3f4d3e9c93d8c81cf70e4c0fe17
