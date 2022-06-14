@@ -31,3 +31,4 @@
 29. create profile screen
 30. add sidebar and search box
 31. create search screen
+32. create admin menu
