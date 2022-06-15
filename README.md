@@ -32,3 +32,7 @@
 30. add sidebar and search box
 31. create dashboard screen
 32. manage products
+33. create product
+34. create product edit screen
+35. implement update product
+36. upload product image
