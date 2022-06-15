@@ -36,3 +36,4 @@
 34. create product edit screen
 35. implement update product
 36. upload product image
+37. delete product
