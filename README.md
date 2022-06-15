@@ -38,3 +38,4 @@
 36. upload product image
 37. delete product
 38. list orders
+39. deliver order
