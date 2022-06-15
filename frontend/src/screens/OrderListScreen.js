@@ -60,7 +60,7 @@ export default function OrderListScreen() {
           payload: getError(err),
         });
       }
-    };
+    }; 
     if (successDelete) {
       dispatch({ type: 'DELETE_RESET' });
     } else {
