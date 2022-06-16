@@ -40,3 +40,6 @@
 38. list orders
 39. deliver order
 40. edit user action
+41. delete user
+42. choose address on google map (DID not implement it)
+43. email order reciept by mailgun
