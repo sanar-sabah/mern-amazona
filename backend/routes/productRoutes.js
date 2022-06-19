@@ -40,6 +40,7 @@ productRouter.put(
       product.slug = req.body.slug;
       product.price = req.body.price;
       product.image = req.body.image;
+      product.images = req.body.images;
       product.category = req.body.category;
       product.brand = req.body.brand;
       product.countInStock = req.body.countInStock;
@@ -65,7 +66,6 @@ productRouter.delete(
     }
   })
 );
-
 productRouter.post(
   '/:id/reviews',
   isAuth,
@@ -78,7 +78,6 @@ productRouter.post(
           .status(400)
           .send({ message: 'You already submitted a review' });
       }
-
       const review = {
         name: req.user.name,
         rating: Number(req.body.rating),
@@ -101,9 +100,7 @@ productRouter.post(
     }
   })
 );
-
 const PAGE_SIZE = 3;
-
 productRouter.get(
   '/admin',
   isAuth,
