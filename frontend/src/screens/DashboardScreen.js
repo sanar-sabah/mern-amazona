@@ -51,6 +51,12 @@ export default function DashboardScreen() {
     fetchData();
   }, [userInfo]);
 
+  const options = {
+    hAxis: { title: 'Date' },
+    vAxis: { title: 'USD amount' },
+    legend: 'none',
+  };
+
   return (
     <div>
       <Helmet>
@@ -97,7 +103,7 @@ export default function DashboardScreen() {
                       ? summary.orders[0].totalSales.toFixed(2)
                       : 0}
                   </Card.Title>
-                  <Card.Text> Orders</Card.Text>
+                  <Card.Text> Orders Total</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -116,6 +122,7 @@ export default function DashboardScreen() {
                   ['Date', 'Sales'],
                   ...summary.dailyOrders.map((x) => [x._id, x.sales]),
                 ]}
+                options={options}
               ></Chart>
             )}
           </div>

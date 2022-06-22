@@ -168,6 +168,7 @@ function App() {
             ))}
           </Nav>
         </div>
+
         <main>
           <Container className="mt-3">
             <Routes>
@@ -219,7 +220,7 @@ function App() {
                 path="/admin/orders"
                 element={
                   <AdminRoute>
-                    <OrderListScreen /> exact
+                    <OrderListScreen />
                   </AdminRoute>
                 }
               ></Route>
@@ -235,7 +236,7 @@ function App() {
                 path="/admin/products"
                 element={
                   <AdminRoute>
-                    <ProductListScreen /> exact
+                    <ProductListScreen />
                   </AdminRoute>
                 }
               ></Route>

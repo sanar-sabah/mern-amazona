@@ -15,16 +15,16 @@ productRouter.post(
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const newProduct = new Product({
-      name: 'sample name ' + Date.now(),
-      slug: 'sample-name-' + Date.now(),
-      image: '/images/p1.jpg',
+      name: 'insert name of item here.. ',
+      slug: 'insert slug',
+      image: 'please upload an image of the item',
       price: 0,
-      category: 'sample category',
-      brand: 'sample brand',
+      category: 'enter category of item',
+      brand: 'enter name of the brand',
       countInStock: 0,
       rating: 0,
       numReviews: 0,
-      description: 'sample description',
+      description: 'enter a brief description of the new item',
     });
     const product = await newProduct.save();
     res.send({ message: 'Product Created', product });
@@ -41,7 +41,6 @@ productRouter.put(
     if (product) {
       product.name = req.body.name;
       product.slug = req.body.slug;
-      //dont we need a isSeller here?
       product.price = req.body.price;
       product.image = req.body.image;
       product.images = req.body.images;
@@ -104,7 +103,7 @@ productRouter.post(
     }
   })
 );
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 6;
 productRouter.get(
   '/admin',
   isAuth,

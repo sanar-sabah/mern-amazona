@@ -222,12 +222,24 @@ export default function ProductEditScreen() {
 
           <Form.Group className="mb-3" controlId="category">
             <Form.Label>Category</Form.Label>
-            <Form.Control
+            <br />
+            <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               required
-            />
+            >
+              <option value="select">select an aption</option> 
+              <option value="Tops">Tops</option> 
+              <option value="Bottoms">Bottoms</option>
+              <option value="Bags">Bags</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Dress">Dress</option>
+              <option value="Underwear">Underwear</option>
+              <option value="Jackets">Jackets</option>
+              <option value="Jackets">Jackets</option>
+            </select>
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="brand">
             <Form.Label>Brand</Form.Label>
             <Form.Control

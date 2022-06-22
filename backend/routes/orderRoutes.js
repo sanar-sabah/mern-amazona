@@ -3,7 +3,13 @@ import expressAsyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
 import User from '../models/userModel.js';
 import Product from '../models/productModel.js';
-import { isAuth, isAdmin, isSeller, mailgun, payOrderEmailTemplate } from '../utils.js';
+import {
+  isAuth,
+  isAdmin,
+  isSeller,
+  mailgun,
+  payOrderEmailTemplate,
+} from '../utils.js';
 
 const orderRouter = express.Router();
 
@@ -148,21 +154,6 @@ orderRouter.put(
           }
         );
       res.send({ message: 'Order Paid', order: updatedOrder });
-    } else {
-      res.status(404).send({ message: 'Order Not Found' });
-    }
-  })
-);
-
-orderRouter.delete(
-  '/:id',
-  isAuth,
-  isAdmin,
-  expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
-    if (order) {
-      await order.remove();
-      res.send({ message: 'Order Deleted' });
     } else {
       res.status(404).send({ message: 'Order Not Found' });
     }
