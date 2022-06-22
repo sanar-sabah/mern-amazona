@@ -2,21 +2,29 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
-import { isAuth, isAdmin, generateToken } from '../utils.js';
+import {
+  isAuth,
+  isAdmin,
+  generateToken,
+  isSeller,
+  isSellerOrAdmin,
+} from '../utils.js';
 const userRouter = express.Router();
+
 userRouter.get(
   '/',
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const users = await User.find({});
     res.send(users);
   })
 );
+
 userRouter.get(
   '/:id',
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user) {
@@ -26,16 +34,18 @@ userRouter.get(
     }
   })
 );
+
 userRouter.put(
   '/:id',
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
       user.isAdmin = Boolean(req.body.isAdmin);
+      user.isSeller = Boolean(req.body.isSeller);
       const updatedUser = await user.save();
       res.send({ message: 'User Updated', user: updatedUser });
     } else {
@@ -47,7 +57,7 @@ userRouter.put(
 userRouter.delete(
   '/:id',
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user) {
@@ -73,6 +83,7 @@ userRouter.post(
           name: user.name,
           email: user.email,
           isAdmin: user.isAdmin,
+          isSeller: user.isSeller,
           token: generateToken(user),
         });
         return;
@@ -95,6 +106,7 @@ userRouter.post(
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
+      isSeller: user.isSeller,
       token: generateToken(user),
     });
   })
@@ -116,6 +128,7 @@ userRouter.put(
         name: updatedUser.name,
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
+        isSeller: user.isSeller,
         token: generateToken(updatedUser),
       });
     } else {
